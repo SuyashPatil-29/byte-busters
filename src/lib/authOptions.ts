@@ -25,7 +25,7 @@ export const authOptions = {
       return session;
     },
     redirect() {
-      return '/'
+      return '/dashboard'
     },
   },
 };

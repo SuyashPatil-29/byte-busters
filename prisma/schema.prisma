@@ -61,4 +61,83 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+
+  generations Generation[]
+  unlimited   Boolean      @default(false)
+
+  tutors   Tutor[]
+  messages Message[]
+
+  LanguageTranslators        LanguageTranslator[]
+  LanguageTranslatorMessages LanguageTranslatorMessage[]
+  stripeCustomerId           String?                     @unique @map(name: "stripe_customer_id")
+  stripeSubscriptionId       String?                     @unique @map(name: "stripe_subscription_id")
+  stripePriceId              String?                     @map(name: "stripe_price_id")
+  stripeCurrentPeriodEnd     DateTime?                   @map(name: "stripe_current_period_end")
+}
+
+enum UploadStatus {
+  PENDING
+  PROCESSING
+  FAILED
+  SUCCESS
+}
+
+model Tutor {
+  id          String  @id @default(cuid())
+  name        String
+  description String?
+
+  uploadStatus UploadStatus @default(PENDING)
+
+  url      String
+  key      String
+  messages Message[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+}
+
+model Message {
+  id   String @id @default(cuid())
+  text String @db.Text()
+
+  isUserMessage Boolean
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+  Tutor     Tutor?   @relation(fields: [tutorId], references: [id])
+  tutorId   String?
+}
+
+model Generation {
+  id     String   @id @default(cuid())
+  type   String
+  date   DateTime @default(now())
+  user   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+}
+
+model LanguageTranslator {
+  id        String                      @id @default(cuid())
+  language  String
+  userId    String
+  createdAt DateTime                    @default(now())
+  user      User                        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages  LanguageTranslatorMessage[]
+}
+
+model LanguageTranslatorMessage {
+  id              String             @id @default(cuid())
+  role            String
+  content         String
+  codeGenerator   LanguageTranslator @relation(fields: [codeGeneratorId], references: [id])
+  codeGeneratorId String
+  userId          String
+  user            User               @relation(fields: [userId], references: [id])
+  createdAt       DateTime           @default(now())
 }
