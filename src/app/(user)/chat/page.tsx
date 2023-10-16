@@ -76,7 +76,7 @@ export default function TutorsPage() {
                 tutors
                   .filter((tutor) =>
                     tutor.name.toLowerCase().includes(search.toLowerCase()),
-                  )
+                  ).reverse()
                   .map((tutor) => (
                     <ListCard
                       key={tutor.id}

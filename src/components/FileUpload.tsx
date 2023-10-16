@@ -26,7 +26,7 @@ const UploadDropzone = () => {
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
 
-  const {startUpload} = useUploadThing("pdfUploader")
+  const {startUpload} = useUploadThing("freePlanUploader")
   const {mutate : startPolling} = trpc.getFile.useMutation({
     onSuccess : (file) =>{
       router.push(`/chat/${file.id}`)

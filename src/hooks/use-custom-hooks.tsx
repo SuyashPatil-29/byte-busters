@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { toast } from "./use-toast"
-import { buttonVariants } from "@/components/ui/Button"
+import { buttonVariants } from "@/components/ui/button"
 
 export const useCustomToast = ()=>{
     const loginToast = ()=>{

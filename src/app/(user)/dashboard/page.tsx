@@ -41,7 +41,11 @@ function HomePage() {
   const { data: user, isLoading } = useQuery({
     queryKey: ["user"],
     queryFn: async (): Promise<any> => {
-      const {data} = await axios.get("api/validate");
+      const res = await fetch("/api/validate");
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await res.json();
       return data;
     },
     onError: () => {
@@ -58,7 +62,7 @@ function HomePage() {
     },
   });
 
-  console.log(user);
+  console.log("user",user);
   
 
   return (

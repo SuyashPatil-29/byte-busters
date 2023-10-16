@@ -1,24 +1,24 @@
 import { getAuthSession } from "@/lib/authOptions";
 import { db } from "@/lib/db";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: Request) {
-  try {
-    const session = await getAuthSession();
-    if (!session) return new Response("Unauthorized", { status: 401 });
+export async function GET(req: NextRequest) {
+  const session = await getAuthSession();
 
-    const user = await db.user.findFirst({
-      where: {
-        id: session.user.id,
-      },
-      include: {
-        generations: true,
-        tutors: true,
-        LanguageTranslators: true,
-      },
-    });
-    if (user) return new Response(JSON.stringify(user), { status: 200 });
-    return new Response("User not found", { status: 404 });
-  } catch (error) {
-    return new Response("Some problem occurred", { status: 500 });
-  }
+  if (!session)
+    return NextResponse.json({ error: "Unauthenticated request", status: 401 });
+
+  const user = await db.user.findUnique({
+    where: {
+      id: session.user.id,
+    },
+    include: {
+      generations: true,
+      tutors: true,
+      LanguageTranslators: true,
+    },
+  });
+
+  return NextResponse.json(user);
 }
+
