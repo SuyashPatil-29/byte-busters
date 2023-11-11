@@ -1,27 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-t3-app`](https://github.com/t3-oss/create-t3-app).
+# Project Overview
 
-Its a web app that lets the user sign up and the upload a pdf of their choice and chat with it.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-t3-app`](https://github.com/t3-oss/create-t3-app). It's a web app that allows users to sign up, upload a PDF of their choice, and engage in chat interactions with it.
 
-Tech Stack
+## Tech Stack
 
-[NextJS](https://nextjs.org/)
-[Tailwind](https://tailwindcss.com/)
-[Prisma](https://www.prisma.io/)
-[Supabase - PostgreSQL](https://supabase.com/)
-[Pinecone - For vector embeddings](https://www.pinecone.io/)
-[OpenAI APIs](https://openai.com/blog/openai-api)
+- [NextJS](https://nextjs.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [Prisma](https://www.prisma.io/)
+- [Supabase - PostgreSQL](https://supabase.com/)
+- [Pinecone - For vector embeddings](https://www.pinecone.io/)
+- [OpenAI APIs](https://openai.com/blog/openai-api)
 
-Watch the demo here.
+## Demo
 
-Architecture
-![Architecture Image](/Arch.jpg)
+Watch the demo [here](#).
 
+## Architecture
+
+![Architecture Image](image.png)
 
 ## Getting Started
 
 To run locally, download the zip file or clone this repo.
 
-Set up a .env file with the env variables from .env.example file.
+Set up a `.env` file with the environment variables from the `.env.example` file.
 
 First, run the development server:
 
@@ -29,4 +31,3 @@ First, run the development server:
 npm run dev
 # or
 pnpm dev
-```

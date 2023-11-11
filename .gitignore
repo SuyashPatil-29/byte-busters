@@ -25,7 +25,10 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env
+.env*
+
+# Ignore specific env files
+!.env.example
 
 # vercel
 .vercel
