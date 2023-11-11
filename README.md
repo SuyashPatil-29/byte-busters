@@ -17,7 +17,8 @@ Watch the demo [here](#).
 
 ## Architecture
 
-![Architecture Image](image.png)
+![Architecture Image](https://github.com/SuyashPatil-29/byte-busters/assets/112413583/2f37ae53-5cfb-44ad-90d9-4da10cb848be)
+
 
 ## Getting Started
 
