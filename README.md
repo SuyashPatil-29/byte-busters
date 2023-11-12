@@ -15,7 +15,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-t3-a
 
 ## Demo
 
-[![Demo Video](https://github.com/SuyashPatil-29/byte-busters/assets/112413583/fb016961-f2e5-4041-8e36-ac7304314a8d)](https://drive.google.com/file/d/1mk_aGQknwhEIbG390OQHX_OmlD_kSKeJ/view?usp=drivesdk)
+Watch the demo [here](https://drive.google.com/file/d/1mk_aGQknwhEIbG390OQHX_OmlD_kSKeJ/view?usp=drivesdk)
 
 ## Architecture
 
