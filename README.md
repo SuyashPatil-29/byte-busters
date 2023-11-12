@@ -6,14 +6,16 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-t3-a
 
 - [NextJS](https://nextjs.org/)
 - [Tailwind](https://tailwindcss.com/)
+- [Shadcn UI Library](https://ui.shadcn.com/)
 - [Prisma](https://www.prisma.io/)
 - [Supabase - PostgreSQL](https://supabase.com/)
 - [Pinecone - For vector embeddings](https://www.pinecone.io/)
 - [OpenAI APIs](https://openai.com/blog/openai-api)
 
+
 ## Demo
 
-Watch the demo [here](#).
+[![Demo Video](https://github.com/SuyashPatil-29/byte-busters/assets/112413583/fb016961-f2e5-4041-8e36-ac7304314a8d)](https://drive.google.com/file/d/1mk_aGQknwhEIbG390OQHX_OmlD_kSKeJ/view?usp=drivesdk)
 
 ## Architecture
 
